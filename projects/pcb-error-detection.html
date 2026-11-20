@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reference-guided PCB inspection using a lightweight tile gate and compact CNN, with an int8 export pipeline targeting ESP32-S3.">
+  <title>PCB Defect Detection | Joshua Dai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="article-shell simple-project">
+    <nav class="article-nav"><a class="back-link" href="../index.html">Back to selected work</a></nav>
+    <div class="project-graphic" aria-hidden="true"><strong>PCB INSPECTION</strong><span>On-device machine learning</span></div>
+    <header class="project-heading">
+      <p class="eyebrow">On-device machine learning · Work in Progress</p>
+      <h1>PCB Defect Detection</h1>
+      <p class="lede">Reference-guided PCB inspection using a lightweight tile gate and compact CNN, with an int8 export pipeline targeting ESP32-S3.</p>
+    </header>
+    <article class="article-body">
+      <h2>Inspecting boards within a microcontroller budget</h2>
+      <p>This project targets bare-PCB inspection on the Seeed XIAO ESP32-S3 Sense. Aligned template and test images are divided into overlapping tiles. A lightweight first-stage gate filters matching regions so a compact multi-label CNN can focus on candidate defects.</p>
+      <h2>Building the inspection pipeline</h2>
+      <p>The implementation includes a DeepPCB tiling and labeling pipeline, classical-gate analysis, and a profiled student CNN. The export path connects PyTorch, ONNX, ESP-PPQ, and ESP-DL, with operator checks for the ESP32-S3 target.</p>
+      <h2>Current scope</h2>
+      <p>Benchmark firmware is written, but execution on the target hardware is pending. Model-training comparisons and the proposed defect-aware distillation study remain in development. The next milestones are hardware profiling and evaluation of the accuracy and compute trade-offs across the cascade.</p>
+      <section class="resource-box" aria-labelledby="project-source"><h2 id="project-source">Source code</h2><div class="resource-links"><a class="button" href="https://github.com/vsubacius/PCBerrorDetection" target="_blank" rel="noopener noreferrer">View repository on GitHub</a></div></section>
+      <section class="skills-tested" aria-labelledby="project-skills">
+        <h2 id="project-skills">Skills tested</h2>
+        <div class="skill-list"><span class="skill-pill">Python</span><span class="skill-pill">PyTorch</span><span class="skill-pill">Computer vision</span><span class="skill-pill">Quantization</span><span class="skill-pill">ESP-DL</span><span class="skill-pill">ESP32-S3</span></div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

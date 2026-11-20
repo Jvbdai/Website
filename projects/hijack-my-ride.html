@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prompt-injection research testbench connecting a Gemini assistant to Android Automotive emulator controls, with posted-notification tests, state verification, and restoration.">
+  <title>hijackMyRide — Automotive AI Security | Joshua Dai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="article-shell simple-project">
+    <nav class="article-nav"><a class="back-link" href="../index.html">Back to selected work</a></nav>
+    <div class="project-graphic" aria-hidden="true"><strong>HIJACK MY RIDE</strong><span>Android Automotive</span></div>
+    <header class="project-heading">
+      <p class="eyebrow">Android Automotive · Work in Progress</p>
+      <h1>hijackMyRide — Automotive AI Security</h1>
+      <p class="lede">Prompt-injection research testbench connecting a Gemini assistant to Android Automotive emulator controls, with posted-notification tests, state verification, and restoration.</p>
+    </header>
+    <article class="article-body">
+      <h2>Testing the assistant trust boundary</h2>
+      <p>hijackMyRide explores how untrusted text can influence an AI assistant that proposes vehicle-control commands. A host-side Python assistant connects Gemini to an Android Automotive OS emulator through an ADB translator. The translator checks supported controls and discovered limits before executing media-volume or HVAC-temperature commands.</p>
+      <h2>From notification to verified state</h2>
+      <p>An Android app posts test notifications inside the emulator. A host runner reads the posted text, supplies it to the model, and records proposed commands alongside observed before-and-after state. The live notification runner establishes restoration paths before testing and restores settings afterward.</p>
+      <h2>Current scope</h2>
+      <p>Offline tests and initial posted-notification trials exercise the pipeline. Broader repeated attack evaluation and an assistant running inside Android Automotive remain in development. The current work uses an emulator and a host-side assistant; it does not demonstrate attacks on a production vehicle or intake from a paired phone.</p>
+      <p class="public-note">The source repository is private. This overview describes the research scope and current implementation.</p>
+      <section class="skills-tested" aria-labelledby="project-skills">
+        <h2 id="project-skills">Skills tested</h2>
+        <div class="skill-list"><span class="skill-pill">Python</span><span class="skill-pill">Android Automotive OS</span><span class="skill-pill">ADB</span><span class="skill-pill">Gemini integration</span><span class="skill-pill">Prompt-injection evaluation</span><span class="skill-pill">State verification</span></div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

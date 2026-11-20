@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Residual TD3 control over a frozen SmolVLA policy in RoboCasa, starting with CloseFridge and validated integration checks.">
+  <title>VLA-RL — Residual Robot Learning | Joshua Dai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="article-shell simple-project">
+    <nav class="article-nav"><a class="back-link" href="../index.html">Back to selected work</a></nav>
+    <div class="project-graphic" aria-hidden="true"><strong>VLA + RL</strong><span>Household manipulation</span></div>
+    <header class="project-heading">
+      <p class="eyebrow">Household manipulation · Work in Progress</p>
+      <h1>VLA-RL — Residual Robot Learning</h1>
+      <p class="lede">Residual TD3 control over a frozen SmolVLA policy in RoboCasa, starting with CloseFridge and validated integration checks.</p>
+    </header>
+    <article class="article-body">
+      <h2>Learning corrections to a base policy</h2>
+      <p>VLA-RL investigates residual reinforcement learning for household manipulation. A frozen SmolVLA vision-language-action policy supplies the base actions, while a TD3 learner adds bounded arm corrections. The current implementation starts with the RoboCasa CloseFridge task.</p>
+      <h2>Keeping the control interface explicit</h2>
+      <p>The residual learner observes robot proprioception, pending base-policy actions, and the position within the action chunk. Images remain on the SmolVLA path. Base motion, control mode, and gripper commands remain unchanged while the residual wrapper constrains arm corrections.</p>
+      <h2>Integration milestone and next steps</h2>
+      <p>The current milestone includes live reward validation, zero-residual trajectory equivalence checks, and a short TD3 training smoke run. These checks establish integration behavior, not task competence or improved success rates. Evaluation under environmental changes and additional household tasks remain part of the broader study.</p>
+      <section class="resource-box" aria-labelledby="project-source"><h2 id="project-source">Source code</h2><div class="resource-links"><a class="button" href="https://github.com/Jvbdai/VLA-RL" target="_blank" rel="noopener noreferrer">View repository on GitHub</a></div></section>
+      <section class="skills-tested" aria-labelledby="project-skills">
+        <h2 id="project-skills">Skills tested</h2>
+        <div class="skill-list"><span class="skill-pill">Python</span><span class="skill-pill">RoboCasa</span><span class="skill-pill">SmolVLA</span><span class="skill-pill">TD3</span><span class="skill-pill">Stable-Baselines3</span><span class="skill-pill">Reinforcement learning</span></div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
